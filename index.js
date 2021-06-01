@@ -1,8 +1,9 @@
-const db = require('./config/firestore');
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-// const router = require('./routes/router.js')
+const usersRouter = require('./routes/usersRouter.js');
+const ordersRouter = require('./routes/ordersRouter.js');
+const availabilityRouter = require('./routes/availabilityRouter.js');
 
 const app = express();
 app.use(express.json());
@@ -10,7 +11,9 @@ app.use(express.json());
 //define origin url
 app.use(cors({ origin: 'http://localhost:3000' }));
 
-// app.use('/', router);
+// app.use('/users', usersRouter);
+// app.use('/orders', ordersRouter);
+app.use('/availability', availabilityRouter);
 
 app.get('/api', (_, res) => {
   res.send('Server running');

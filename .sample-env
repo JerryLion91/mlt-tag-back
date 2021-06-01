@@ -1,0 +1,19 @@
+# general
+APP_NAME=mlt-tag-back
+
+# serviceAccount
+PROJECT_ID=
+PRIVATE_KEY_ID=
+PRIVATE_KEY=
+CLIENT_EMAIL=
+CLIENT_ID=
+CLIENT_X509_CERT_URL=
+
+
+# dataBank
+DB_NAME=
+DB_PASS=
+DB_HOST=
+
+# stack
+STACK=
