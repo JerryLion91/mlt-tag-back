@@ -1,4 +1,4 @@
-// const db = require('./config/firestore');
+const db = require('./config/firestore');
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
