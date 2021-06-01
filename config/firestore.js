@@ -3,9 +3,7 @@ require('dotenv').config();
 // const serviceAccount = require('../serviceAccountKey.json');
 
 admin.initializeApp({
-  credential: admin.credential.cert(
-    serviceAccount || process.env.SERVICE_ACCOUNT
-  ),
+  credential: admin.credential.cert(process.env.SERVICE_ACCOUNT),
 });
 
 module.exports = db = admin.firestore();
