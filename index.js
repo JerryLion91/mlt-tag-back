@@ -9,7 +9,12 @@ const app = express();
 app.use(express.json());
 
 //define origin url
-app.use(cors({ origin: 'https://mlt-tag-test.web.app' }));
+app.use(
+  cors({
+    origin: ['https://mlt-tag-test.web.app', 'http://localhost:3000'],
+    optionsSuccessStatus: 200, // For legacy browser support
+  })
+);
 
 app.use('/users', usersRouter);
 app.use('/orders', ordersRouter);
