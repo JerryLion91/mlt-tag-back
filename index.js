@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 //define origin url
-app.use(cors({ origin: 'https://mlt-tag-test.web.app/' }));
+app.use(cors({ origin: 'https://mlt-tag-test.web.app' }));
 
 app.use('/users', usersRouter);
 app.use('/orders', ordersRouter);
