@@ -15,3 +15,6 @@ MAIL_PASSWORD=
 
 # stack
 STACK=
+
+# serve
+PORT=8080

@@ -4,6 +4,7 @@ require('dotenv').config();
 const usersRouter = require('./routes/usersRouter.js');
 const ordersRouter = require('./routes/ordersRouter.js');
 const availabilityRouter = require('./routes/availabilityRouter.js');
+const { sendNodeMail } = require('./e-mails/nodeMailer');
 
 const app = express();
 app.use(express.json());
@@ -24,7 +25,16 @@ app.get('/api', (_, res) => {
   res.send('Server running');
 });
 
-app.listen(process.env.PORT || 8080, function (err) {
+app.get('/checkEmail', async (req, res) => {
+  const { subject, message } = req.query;
+  const info = await sendNodeMail(
+    subject,
+    `<h1>HI leo</h1><p>Hello, i sent from node</p><p>${message}</p>`
+  );
+  res.send(info);
+});
+
+app.listen(process.env.PORT, function (err) {
   if (err) console.log(err);
   console.log('Server listening');
 });
