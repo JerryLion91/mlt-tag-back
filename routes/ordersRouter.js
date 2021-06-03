@@ -45,24 +45,4 @@ const updateOrdersById = async (id, update) => {};
 const deleteOrdersById = async (id) => {};
 // End deleteOrdersById
 
-/**
- *
- * GET /availability
- */
-const getAvailability = async () => {
-  const docRef = availabilityColectionRef.doc('standards');
-  try {
-    const document = await docRef.get();
-    if (document.exists) {
-      return document.data();
-    } else {
-      // doc.data() will be undefined in this case
-      console.log('Standards not found in the DataBank');
-    }
-  } catch (error) {
-    console.error('Error getting document: ', error);
-  }
-};
-// End getAvailability
-
 module.exports = ordersRouter = app;
