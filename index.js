@@ -22,7 +22,7 @@ app.use('/orders', ordersRouter);
 app.use('/availability', availabilityRouter);
 
 app.get('/api', (_, res) => {
-  res.send('Server running');
+  res.send({ msg: 'Server running' });
 });
 
 app.get('/checkEmail', async (req, res) => {
