@@ -8,7 +8,7 @@ const availabilityColectionRef = db.collection('availability');
  *
  * GET /availability
  */
-app.get('/', async (_, res, next) => {
+app.get('/', async (req, res, next) => {
   const { std } = req.query;
   const docRef = availabilityColectionRef.doc(std);
   try {
